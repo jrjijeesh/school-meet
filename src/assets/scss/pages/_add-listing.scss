@@ -1,0 +1,13 @@
+// Banner
+.add-listing-banner {
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+.listing-slider {
+  .category {
+    min-height: 65px;
+  }
+}

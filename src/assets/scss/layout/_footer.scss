@@ -1,0 +1,33 @@
+footer:not(.school-app-footer) {
+  margin-bottom: 60px;
+  background-color: var(--color-light);
+  border-top: 1px solid var(--grey-1);
+
+  h6 {
+    text-transform: uppercase;
+    font-size: rem(12);
+  }
+
+  li {
+    a {
+      text-decoration: none;
+      font-size: rem(14);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    margin-bottom: 0;
+    padding: 40px 0 0 0;
+
+    .copyright {
+      margin-top: 40px;
+      border-top: 1px solid var(--grey-1);
+    }
+  }
+}
+
+.school-app-footer{}
