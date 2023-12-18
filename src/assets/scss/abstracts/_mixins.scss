@@ -1,0 +1,62 @@
+$font-size: 16;
+@function rem($pixels, $context: $font-size) {
+  @return #{$pixels/$context}rem;
+}
+@mixin shadow {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px !important;
+}
+@mixin btn-shadow {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 2px, rgba(0, 0, 0, 0.05) 0px 4px 12px !important;
+}
+@mixin btn-shadow-hover {
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px !important;
+}
+@mixin d-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin d-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin d-center-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+@mixin d-center-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@mixin rotate($degree) {
+  transform: rotate($degree);
+}
+@mixin transition($property) {
+  transition: $property 0.2s ease 0s !important;
+}
+@mixin transitiond($property) {
+  transition: $property 0.2s ease 1s !important;
+}
+@mixin scl-box {
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-8);
+  padding: 24px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 16px;
+}
+@mixin focus {
+  outline: 0;
+  box-shadow: inset 0 0 0 1.2px black;
+}
+@mixin focus-error {
+  outline: 0;
+  box-shadow: inset 0 0 0 1.2px var(--error);
+}
+@mixin ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

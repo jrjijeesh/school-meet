@@ -1,0 +1,214 @@
+// Buttton Animation
+
+.animated-1 {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border: none !important;
+  padding: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--brand-color) 50%,
+    var(--brand-color-dark)
+  );
+  color: #656565;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 50px 0 rgb(0 0 0 / 7%);
+  transition: 0.2s all linear;
+  text-decoration: initial;
+  margin-bottom: 15px;
+}
+
+.animated-1 span {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  color: white;
+  background: var(--brand-color);
+  padding: 5px;
+  white-space: nowrap;
+}
+
+.animated-1:after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 51, 102, 0) 0%,
+    rgba(255, 51, 102, 1) 50%,
+    rgba(255, 51, 102, 0) 100%
+  );
+  -webkit-animation: rotate 2s linear infinite;
+  animation: rotate 2s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .scl-scrollbar {
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: var(--color-light-1);
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: var(--grey-2);
+    }
+  }
+}
+
+
+// Top Banner Advertisement
+
+ /* Banner Advertisement: */
+ .banner-ad {
+  background-color: var(--primary-color);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: var(--color-white);
+  position: relative;
+  h2,h3{
+    padding-right: 50px;
+  }
+  img.advertisement{
+    max-width: 400px;
+    max-height: 250px;
+  }
+  .close{
+    top: 30px;
+    right: 30px;
+    width: 20px;
+    height: 20px;
+    z-index: 1000;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    cursor: pointer;
+  }
+}
+
+/* Footer Ad */
+
+@media screen and (max-width:991px) {
+  .bottom-footer {
+    background-color: var(--pm-c);
+    color: var(--cw);
+    padding: 20px 40px;
+    position: sticky;
+    bottom: 0;
+  }
+
+  .bottom-footer p {
+    margin: 0;
+    line-height: 1.2;
+    font-size: 15px;
+  }
+}
+
+// Marquee
+.marquee-slider {
+  background-color: black;
+  color: #fff;
+  .marquee-container {
+    height: 30px;
+    overflow: hidden;
+    line-height: 30px;
+    position: relative;
+    font-size: 14px;
+    .marquee {
+      top: 0;
+      left: 100%;
+      min-width: max-content;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      animation: marquee 30s linear infinite;
+    }
+    .marquee2 {
+      animation-delay: 15s;
+    }
+    
+    b {
+      padding-left: 10px;
+    } 
+  }
+}
+@keyframes marquee {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: -100%
+  }
+}
+
+
+// Blog Post
+
+.blog-post-details{
+  img{
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  p,li{
+    line-height: 1.7;
+    font-size: 18px;
+    color: var(--primary-color);
+    a{
+      color: var(--link-txt);
+    }
+  }
+}
+
+.blogs-page{
+  .scl-popular-places-container .scl-popular-places img{
+    max-width: 75px;
+    border-radius: 10px;
+    height: 60px;
+  }
+  .scl-blog-wrapper:last-child {
+    .scl-blog-cont{
+      border-bottom: 0;
+    }
+  }
+}
+
+.scl-mini-quote{
+  font-size: 24px;
+  font-style: italic;
+  color: var(--color-medium);
+}

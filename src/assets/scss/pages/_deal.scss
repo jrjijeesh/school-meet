@@ -1,0 +1,227 @@
+.deal {
+  &-search {
+    padding: 40px 0;
+    background-color: var(--c-grey-dark);
+  }
+  &-page {
+    .article-items {
+      .list {
+        font-weight: 400;
+        padding-left: 20px;
+        font-size: 14px;
+        li {
+          margin-bottom: 3px;
+          list-style: disc;
+        }
+      }
+      .head-price {
+        h3 {
+          white-space: normal !important;
+          overflow: auto !important;
+        }
+      }
+      .left {
+        position: relative;
+      }
+      @media screen and (min-width: 992px) {
+        .left {
+          width: 500px;
+        }
+        .right {
+          width: calc(100% - 500px);
+          padding-left: 25px;
+        }
+      }
+      @media screen and (min-width: 1200px) {
+        .left {
+          width: 700px;
+        }
+        .right {
+          width: calc(100% - 700px);
+        }
+      }
+      @media screen and (min-width: 992px) {
+        &.full-width {
+          flex-direction: column;
+          .left {
+            width: 100%;
+          }
+          .right {
+            width: 100%;
+          }
+
+          @media screen and (min-width: 1400px) {
+            flex-direction: row;
+            .left {
+              width: 50%;
+            }
+            .right {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      div.il-wrapper.scl-box {
+        padding-bottom: 100px;
+      }
+    }
+  }
+}
+
+.deal-gallery {
+  @media screen and (max-width: 991px) {
+    .article-items {
+      flex-direction: column !important;
+    }
+  }
+  .mySlides {
+    img {
+      width: 100% !important;
+      height: 375px;
+      object-fit: cover;
+      @media screen and (max-width: 991px) {
+        height: 300px !important;
+      }
+    }
+  }
+  .thumnnails {
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 10px;
+    span {
+      display: inline-flex;
+      img {
+        margin-right: 0;
+        height: 80px;
+        width: 100%;
+        object-fit: cover;
+        min-width: unset;
+      }
+      @media screen and (max-width: 991px) {
+        img {
+          height: 50px;
+        }
+        margin-bottom: 50px;
+      }
+    }
+
+    .dot {
+      cursor: pointer;
+      opacity: 0.4;
+      flex: 1;
+      display: none;
+
+      &.active:first-child {
+        display: flex;
+        + .dot,
+        + .dot + .dot,
+        + .dot + .dot + .dot,
+        + .dot + .dot + .dot + .dot {
+          display: flex !important;
+        }
+        & ~ .to-show {
+          display: none;
+        }
+      }
+      &.to-show,
+      &.active {
+        display: flex;
+      }
+    }
+
+    .active,
+    .dot:hover {
+      opacity: 1;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+  }
+
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 70px);
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    height: 60px;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    @media screen and (max-width: 991px) {
+      top: calc(50% - 35px);
+    }
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  .mySlides {
+    display: none;
+  }
+  .active-slide {
+    display: block;
+  }
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

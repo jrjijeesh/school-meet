@@ -1,0 +1,247 @@
+header {
+  padding: 10px 0;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: var(--color-white);
+  @include shadow;
+  @include d-center;
+  flex-direction: column;
+  @include transition(margin-bottom);
+  .top,
+  .bottom {
+    width: 100%;
+    background-color: var(--color-white);
+    position: relative;
+  }
+  .top {
+    z-index: 1;
+  }
+  @media screen and (max-width: 991.5px) {
+    .middle {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .middle {
+      width: 100%;
+      background-color: var(--color-white);
+      position: relative;
+      z-index: 0;
+      position: absolute;
+      background-color: var(--color-light);
+      top: -100vh;
+      @include transition(top);
+      ul {
+        font-size: rem(14);
+        @include d-center;
+        li {
+          display: inline-flex;
+          margin: 0;
+          a {
+            height: 40px;
+            padding: 0 10px;
+            text-decoration: none;
+            @include d-center;
+            @include transition(background-color);
+          }
+          &.active a,
+          &:hover a{
+            background-color: var(--color-light-1);
+          }
+        }
+      }
+    }
+    &.active-middle {
+      // margin-bottom: 2rem;
+      margin-bottom: 42px;
+      @include transition(margin-bottom);
+      .middle {
+        position: absolute;
+        top: 100%;
+        min-height: 40px;
+        @include transition(top);
+      }
+    }
+  }
+  &.hide-header {
+    top: -80px;
+  }
+}
+.scl-header {
+  height: 80px;
+  .logo {
+    display: inline-flex;
+  }
+}
+.scl-header-left {
+  line-height: 0;
+  @include d-center-start;
+}
+.scl-header-center {
+  @include d-center;
+}
+.scl-header-right {
+  @include d-center-end;
+}
+
+@media screen and (max-width: 991px) {
+  header {
+    height: 65px;
+  }
+  .scl-header {
+    height: 65px;
+    .logo {
+      display: inline-flex;
+      width: 35px;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .menu-middle-large-active {
+    header {
+      top: -80px;
+      @include transition(top);
+      .middle {
+        background-color: var(--color-white);
+        border-bottom: 1px solid var(--border-1);
+        height: 80px;
+        display: flex;
+        top: 80px;
+        align-items: center;
+        @include transition(height);
+        #close-middle-menu {
+          display: none;
+        }
+      }
+    }
+  }
+  html:not(.menu-middle-large-active) {
+    .active-only-middle {
+      display: none;
+    }
+  }
+}
+
+.scl-menu-list {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  ul {
+    position: absolute;
+    background-color: var(--color-white);
+    right: -20px;
+    top: 70%;
+    padding: 5px 0;
+    display: none;
+    opacity: 1;
+    z-index: 1;
+    li {
+      &:not(:last-of-type) {
+        margin-bottom: 0;
+      }
+      a {
+        display: flex;
+        min-width: 100px;
+        padding: 5px 10px;
+        text-decoration: none;
+        @include transition(background-color);
+        &:hover {
+          background-color: var(--color-light);
+          @include transition(background-color);
+        }
+        &:active {
+          background-color: var(--grey-1);
+        }
+      }
+    }
+    &.medium {
+      li {
+        a {
+          min-width: 125px;
+        }
+      }
+    }
+  }
+  &.active {
+    ul {
+      display: block;
+      top: 100%;
+      animation: menuactive 0.1s linear;
+      &.horiz {
+        display: flex;
+        padding: 5px;
+        li {
+          a {
+            min-width: unset;
+            font-size: 16px;
+            padding: 8px;
+            border-radius: var(--radius-50);
+          }
+        }
+      }
+    }
+  }
+  &.to-top {
+    &.active {
+      ul {
+        top: unset;
+        bottom: 100%;
+        animation: topmenuactive 0.1s linear;
+      }
+    }
+  }
+}
+
+.call-back, .button-1 {
+  background-color: var(--c-pink);
+  margin-left: rem(5);
+  height: 42px;
+  color: var(--color-white);
+  padding: 0 15px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  @extend .scl-btn;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+.button-2 {
+  background-color: var(--c-green);
+  margin-left: rem(5);
+  height: 42px;
+  color: var(--color-white);
+  padding: 0 15px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  @extend .scl-btn;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+@keyframes menuactive {
+  0% {
+    top: 70%;
+    opacity: 0;
+  }
+  100% {
+    top: 100%;
+    opacity: 1;
+  }
+}
+@keyframes topmenuactive {
+  0% {
+    bottom: 70%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 1;
+  }
+}
