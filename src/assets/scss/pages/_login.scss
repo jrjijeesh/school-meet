@@ -1,0 +1,17 @@
+// Banner
+.login-banner {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(45deg, rgb(0 0 0 / 30%), rgb(0 0 0 / 30%)), url(/scl-login.jpg);
+  background-size: cover;
+  background-position-y: center;
+  .home-banner-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  @media screen and (max-width: 991px) {
+    padding: 40px 0;
+  }
+}

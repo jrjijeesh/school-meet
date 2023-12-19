@@ -1,5 +1,78 @@
-<form [formGroup]="form" (ngSubmit)="submitForm()">
-  <input type="text" placeholder="Username" />
-  <input type="password" placeholder="Password" />
-  <button type="submit">Login</button>
-</form>
+  <div class="login-banner">
+    <div class="container h-100">
+      <div class="row home-banner-container">
+        <div class="col-12 col-lg-7 col-xl-8 col-xxl-9">
+          <section class="scl-quotes">
+            <div class="container-fluid c-white">
+              <h4>Connect Friends, Studends, Colleagues and More..</h4>
+              <blockquote>
+                <q>
+                  True friends are never apart, maybe in distance but never in heart.
+                </q>
+              </blockquote>
+            </div>
+          </section>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="submitForm()" class="col-12 col-lg-5 col-xl-4 col-xxl-3">
+          <div class="scl-box scl-white">
+            <div class="mb-4">
+              <h3>Login</h3>
+            </div>
+            <div class="scl-form-el-cont fw-500">
+              <div class="scl-form-el-wrap">
+                <div class="scl-form-el">
+                  <input id="step-email" type="email" placeholder="Enter Email or Phone Number" required />
+                  <span class="invalid-1 invalid d-none">Invalid Email</span>
+                </div>
+
+                <div class="scl-form-el">
+                  <input class="scl-password-field" id="myPassword" type="password" placeholder="Password *" required />
+                  <span class="show-password">&#128065;</span>
+                </div>
+              </div>
+              <button type="submit" class="mt-4 scl-form-submit-1">
+                Login
+              </button>
+              <div class="
+                    c-brand
+                    fs-14
+                    mt-3
+                    no-decoration
+                    d-flex
+                    justify-content-end
+                  ">
+                <a href="8-reset-password.html">Forgot Password</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-3 scl-box scl-white">
+            <div class="mb-4">
+              <h3>Create Account</h3>
+            </div>
+            <div class="scl-form-el-cont fw-500">
+              <div class="no-decoration-all">
+                <div class="button-2">
+                  <a href="#">Create Account</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="school-app-footer">
+    <div class="container">
+      <div class="row copyright">
+        <div class="container">
+          <p class="fs-14 text-center"> <span class="dynamic-year"></span> &copy; All rights reserved. School
+            Application Developed and Managing by Alumi of G.H.S.S. Palukal</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+

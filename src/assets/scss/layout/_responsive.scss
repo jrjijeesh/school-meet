@@ -1,0 +1,25 @@
+@media screen and (max-width: 767px) {
+  h1 {
+    &.secondary {
+      font-size: rem(28);
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .no-shadow-mobile {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .pt-115-992 {
+    padding-top: 115px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .xl-20 .col-xl-3 {
+    width: 20%;
+  }
+}

@@ -1,0 +1,48 @@
+// Star Rating
+.scl-rating-wrapper {
+  user-select: none;
+  label {
+    color: var(--c-gold);
+    cursor: pointer;
+    @include transition(color);
+  }
+  input[type="radio"] {
+    display: none;
+    &:checked {
+      + label ~ label {
+        color: var(--grey-1);
+        @include transition(color);
+      }
+    }
+  }
+}
+
+// Reviews
+.scl-reviews-wrapper {
+  margin-bottom: 30px;
+  .reviewer {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    img {
+      border-radius: var(--radius-50);
+      margin-right: 15px;
+      object-fit: cover;
+    }
+    .name {
+      font-weight: 500;
+    }
+    .date {
+      font-size: rem(14);
+      color: var(--color-medium);
+    }
+  }
+  .reviews {
+    color: var(--color-medium);
+    margin-bottom: 15px;
+  }
+  a {
+    font-size: rem(14);
+    font-weight: 500;
+  }
+}

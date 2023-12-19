@@ -1,0 +1,178 @@
+.scl-form-el-cont {
+  input {
+    width: 100%;
+    padding: 10px;
+    font-family: inherit;
+    font-size: rem(14);
+    margin: 0;
+    min-height: 55px;
+    border: 0;
+    border-radius: var(--radius-8);
+    &:focus {
+      @include focus;
+    }
+    @media screen and (max-width:767px) {
+      min-height: 35px;
+    }
+    &.error {
+      background-color: var(--error-light);
+      &:focus {
+        @include focus-error;
+      }
+    }
+  }
+  .invalid {
+    position: absolute;
+    top: 2px;
+    font-size: 11px;
+    left: 10px;
+    color: var(--error);
+  }
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: inherit;
+    font-size: rem(14);
+    margin: 0;
+    resize: none;
+    border: 0;
+    border-radius: var(--radius-8);
+    &:focus {
+      @include focus;
+    }
+  }
+  select {
+    width: 100%;
+    padding: 10px 5px;
+    min-height: 55px;
+    font-family: inherit;
+    font-size: rem(14);
+    margin: 0;
+    border: 0;
+    border-radius: var(--radius-8);
+    &:focus {
+      @include focus;
+    }
+    @media screen and (max-width:767px) {
+      min-height: 35px;
+    }
+  }
+  .scl-form-el-wrap {
+    border-radius: var(--radius-8);
+    border: 1px solid var(--border-1);
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+  }
+  .scl-form-el {
+    display: flex;
+    position: relative;
+    &:not(:last-of-type) {
+      border-bottom: 1px solid var(--border-1);
+    }
+    label {
+      &.error {
+        position: absolute;
+        bottom: 2px;
+        right: 10px;
+        font-size: rem(12);
+        font-weight: 400;
+        color: var(--error);
+      }
+    }
+  }
+  .show-password {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    color: var(--brand-color);
+    font-size: 20px;
+    user-select: none;
+    z-index: 1;
+    opacity: 0.7;
+    @include transition(opacity);
+    &:hover {
+      opacity: 0.85;
+      @include transition(opacity);
+    }
+    &:active {
+      opacity: 1;
+      @include transition(opacity);
+    }
+  }
+  .scl-password-field[type="password"] + .show-password {
+    color: var(--primary-color);
+  }
+  .password-tick {
+    position: absolute;
+    right: 40px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    pointer-events: none;
+    opacity: 0;
+    @include transition(opacity);
+  }
+  .tick ~ .password-tick {
+    opacity: 1;
+    @include transition(opacity);
+    fill: var(--error);
+  }
+  .tick.valid ~ .password-tick {
+    fill: var(--success);
+  }
+}
+
+.scl-entries {
+  min-height: 45px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.enq-views {
+  min-width: max-content;
+  text-align: revert;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.scl-select {
+  position: relative;
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 10px;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+  &::after {
+    content: "\25C0";
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    transform: rotate(30deg);
+  }
+}
+.form-message {
+  min-height: 48px;
+  text-align: center;
+}
