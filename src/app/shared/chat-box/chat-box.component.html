@@ -1,0 +1,72 @@
+<div class="chat-button" *ngIf="!showWindow" (click)="openChatBox()">Chat</div>
+
+<div class="chat-box" *ngIf="showWindow">
+  <div *ngIf="!viewChatBoxTab">
+    <div class="chat-box-header">
+      Users
+      <span class="chat-box-toggle"><i class="material-icons">close</i></span>
+    </div>
+
+    <div class="chat-box-body">
+      <div>User1 - latest msg</div>
+      <div>User2 - latest msg</div>
+    </div>
+    <div class="chat-input">
+      <form>
+        <input type="text" id="chat-input" placeholder="Select User" />
+        <button type="submit" class="chat-submit" id="chat-submit">
+          <i class="material-icons" (click)="selectUser()">Start Chat</i>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="viewChatBoxTab">
+    <div class="chat-box-header">
+      Chat
+      <span class="chat-box-toggle"><i class="material-icons">close</i></span>
+      <span class="chat-box-toggle"
+        ><i class="material-icons">arrow-left</i></span
+      >
+    </div>
+
+    <div class="chat-box-body" style="min-height: 200px">
+      <div>
+        <div style="text-align: right">
+          <div
+            style="
+              background: green;
+              display: inline;
+              border-radius: 4px px;
+              padding: 4px 6px;
+              margin-right: 2px;
+            "
+          >
+            Msg right
+          </div>
+        </div>
+
+        <div>
+          <div
+            style="
+              background: yellow;
+              display: inline;
+              border-radius: 4px px;
+              padding: 4px 6px;
+              margin-right: 2px;
+            "
+          >
+            Msg left dfhskdhf skdfhskahdfkashdf
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input">
+      <form>
+        <input type="text" id="chat-input" placeholder="Send a message..." />
+        <button type="submit" class="chat-submit" id="chat-submit">
+          <i class="material-icons" (click)="send()">send</i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
